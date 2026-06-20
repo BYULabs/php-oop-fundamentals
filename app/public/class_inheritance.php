@@ -2,6 +2,7 @@
 
 class User
 {
+    var $is_admin = false;
     var $first_name;
     var $last_name;
     var $username;
@@ -21,6 +22,16 @@ class Customer extends User
     function location()
     {
         return $this->city . ", " . $this->state . ", " . $this->country;
+    }
+}
+
+class AdminUser extends User
+{
+    var $is_admin = true;
+
+    function full_name()
+    {
+        return $this->first_name . " " . $this->last_name . " (Admin)";
     }
 }
 
